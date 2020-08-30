@@ -1,0 +1,35 @@
+﻿<Page x:Class="QuizJhonCorzo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuizJhonCorzo"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid Background="#FFCCDAF3">
+        <Label Content="Character class:" HorizontalAlignment="Left" Margin="55,195,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
+        <ComboBox Name="classesCombobx" Margin="206,194,397,226" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding classes}" FontSize="14"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Label Content="Character name:" HorizontalAlignment="Left" Margin="55,54,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="206,60,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="197" FontSize="14"/>
+        
+        <Label Content="Character genre:" HorizontalAlignment="Left" Margin="55,102,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
+        <CheckBox Content="Male" HorizontalAlignment="Left" Margin="59,146,0,0" VerticalAlignment="Top" FontSize="14" />
+        <CheckBox Content="Female" HorizontalAlignment="Left" Margin="206,146,0,0" VerticalAlignment="Top" FontSize="14" />
+        <CheckBox Content="Other" HorizontalAlignment="Left" Margin="348,150,0,0" VerticalAlignment="Top" FontSize="14" />
+        
+        <Label Content="Character date of birth:" HorizontalAlignment="Left" Margin="55,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
+        <Calendar HorizontalAlignment="Left" Margin="224,251,0,0" VerticalAlignment="Top" Height="170"/>
+
+    </Grid>
+</Page>
