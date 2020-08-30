@@ -23,6 +23,16 @@ namespace QuizJhonCorzo
         public LoginPage()
         {
             InitializeComponent();
+
+            MainWindow w = (MainWindow)Window.GetWindow(this);
+
+            
+
+            
+            {
+                txtUsername.Text = "";
+                txtPassword.Password = "";
+            }
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -40,6 +50,12 @@ namespace QuizJhonCorzo
             {
                 MessageBox.Show("Invalid credentials.");
             }
+        }
+
+        private void Grid_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            txtUsername.Text = "";
+            txtPassword.Password = "";
         }
     }
 }

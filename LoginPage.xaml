@@ -8,7 +8,7 @@
       d:DesignHeight="322" d:DesignWidth="792"
       Title="LoginPage">
 
-    <Grid Background="#FF979794" Height="332">
+    <Grid Background="#FF979794" Height="332" IsVisibleChanged="Grid_IsVisibleChanged">
 
         <Grid Margin="250,24" Background="#FFEEEEEE">
             <Label Content="LOGIN" HorizontalAlignment="Left" Margin="112,26,0,0" VerticalAlignment="Top" FontSize="22"/>

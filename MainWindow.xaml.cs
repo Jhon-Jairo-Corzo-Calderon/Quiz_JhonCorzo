@@ -23,6 +23,8 @@ namespace QuizJhonCorzo
         public MainWindow()
         {
             InitializeComponent();
+            
         }
+
     }
 }

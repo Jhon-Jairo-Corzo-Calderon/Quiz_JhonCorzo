@@ -9,27 +9,40 @@
       Title="MainPage">
 
     <Grid Background="#FFCCDAF3">
-        <Label Content="Character class:" HorizontalAlignment="Left" Margin="55,195,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
-        <ComboBox Name="classesCombobx" Margin="206,194,397,226" >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding classes}" FontSize="14"></TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="733*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Character class:" HorizontalAlignment="Left" Margin="56,50,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <ComboBox Name="classesCombobx" Margin="141,50,396,274" Grid.Row="1" Grid.Column="1"  >
+
         </ComboBox>
 
-        <Label Content="Character name:" HorizontalAlignment="Left" Margin="55,54,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="206,60,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="197" FontSize="14"/>
-        
-        <Label Content="Character genre:" HorizontalAlignment="Left" Margin="55,102,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
-        <CheckBox Content="Male" HorizontalAlignment="Left" Margin="59,146,0,0" VerticalAlignment="Top" FontSize="14" />
-        <CheckBox Content="Female" HorizontalAlignment="Left" Margin="206,146,0,0" VerticalAlignment="Top" FontSize="14" />
-        <CheckBox Content="Other" HorizontalAlignment="Left" Margin="348,150,0,0" VerticalAlignment="Top" FontSize="14" />
-        
-        <Label Content="Character date of birth:" HorizontalAlignment="Left" Margin="55,252,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold"/>
-        <Calendar HorizontalAlignment="Left" Margin="224,251,0,0" VerticalAlignment="Top" Height="170"/>
+        <Label Content="Character name:" HorizontalAlignment="Left" Margin="56,24,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBox Name="txtCharName" HorizontalAlignment="Left" Height="22" Margin="141,30,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="196" FontSize="14" Grid.Column="1"/>
+
+        <Label Content="Character gender:" HorizontalAlignment="Left" Margin="56,72,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <CheckBox Name="checkCharMale" Content="Male" HorizontalAlignment="Left" Margin="56,10,0,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1" Grid.ColumnSpan="2" Checked="checkCharMale_Checked" Unchecked="checkCharMale_Unchecked" />
+        <CheckBox Name="checkCharFemale" Content="Female" HorizontalAlignment="Left" Margin="141,10,0,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1" Grid.Column="1" Checked="checkCharFemale_Checked" Unchecked="checkCharFemale_Unchecked" />
+        <CheckBox Name="checkCharOther" Content="Other" HorizontalAlignment="Left" Margin="283,10,0,0" VerticalAlignment="Top" FontSize="14" Grid.Row="1" Grid.Column="1" Checked="checkCharOther_Checked" Unchecked="checkCharOther_Unchecked" />
+
+        <Label Content="Character date of birth:" HorizontalAlignment="Left" Margin="56,109,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Calendar Name="calendarCharDateBirth" HorizontalAlignment="Left" Margin="159,107,0,0" VerticalAlignment="Top" Height="170" Grid.Row="1" Grid.Column="1"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="113,294,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Row="1" Grid.Column="1"/>
+        <Button Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="223,294,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Grid.Column="1" Click="btnLogOut_Click"/>
+        <DataGrid Name="dataChar" HorizontalAlignment="Right" Width="372" AutoGenerateColumns="False" Margin="0,26,10,84" Grid.RowSpan="2" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="90" Binding="{Binding CharName}"/>
+                <DataGridTextColumn Header="Gender" Width="90" Binding="{Binding CharGender}" />
+                <DataGridTextColumn Header="Class" Width="100
+                                    " Binding="{Binding CharClass}"/>
+                <DataGridTextColumn Header="Date of birth" Width="100" Binding="{Binding CharBirthDate}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Page>
